@@ -1,0 +1,42 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family:Arial, Helvetica, sans-serif
+}
+h1 {
+    color:brown;
+    text-align: center;
+    font: bold 2em/3em Arial, Helvetica, sans-serif
+}
+
+h3 {
+    color:brown;
+}
+
+body {
+    background-color: burlywood;
+    color:brown;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+#header {
+    color:brown;
+    font-weight: bold;
+}
+
+#main {
+    color: brown;
+}
+
+#favoriteTeam {
+    color:midnightblue;
+    font-weight: bold;
+}
+
+#footer {
+    color:brown;
+}
