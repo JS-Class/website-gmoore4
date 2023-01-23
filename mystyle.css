@@ -71,3 +71,15 @@ nav a:active {
     color: aqua;
     text-decoration: underline;
 }
+
+th {
+    font-weight: bolder;
+    padding-right: 75px;
+    color: black;
+    border: 1px solid black;
+}
+
+td {
+    font-weight: bold;
+    border: 1px solid black;
+}
