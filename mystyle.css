@@ -4,27 +4,28 @@ h3,
 h4,
 h5,
 h6 {
-    font-family:Arial, Helvetica, sans-serif
+    font-family: Arial, Helvetica, sans-serif
 }
+
 h1 {
-    color:brown;
+    color: brown;
     text-align: center;
     font: bold 2em/3em Arial, Helvetica, sans-serif
 }
 
 h3 {
-    color:brown;
+    color: brown;
 }
 
 body {
     background-color: burlywood;
-    color:brown;
+    color: brown;
     font-size: 1em;
     font-weight: bold;
 }
 
 #header {
-    color:brown;
+    color: brown;
     font-weight: bold;
 }
 
@@ -33,10 +34,40 @@ body {
 }
 
 #favoriteTeam {
-    color:midnightblue;
+    color: midnightblue;
     font-weight: bold;
 }
 
 #footer {
-    color:brown;
+    color: brown;
+}
+
+nav {
+    background-color: brown;
+    line-height: 3em;
+    display: block;
+}
+
+nav li {
+    display: inline;
+    padding-right: 40px;
+    list-style-type: none;
+}
+
+nav a:link {
+    color: burlywood;
+    text-decoration: none;
+}
+
+nav a:visited {
+    color: burlywood;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+nav a:active {
+    color: aqua;
+    text-decoration: underline;
 }
