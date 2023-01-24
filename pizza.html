@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Gabriel Moore's Web Page</title>
+    <meta charset="utf-8">
+    <meta name="description" content="This is a page to order pizza from.">
+    <meta name="keywords" content="pizza, order, ordering pizza">
+    <link rel="stylesheet" href="mystyle.css" type="text/css">
+</head>
+
+<body>
+    <h1>Pizza Ordering</h1>
+
+    <nav>
+        <ul>
+            <li><a href="index.html" title="About">About</a></li>
+            <li><a href="page2.html" title="Page 2">Page 2</a></li>
+            <li><a href="courses.html" title="Courses">Courses</a></li>
+            <li><a href="pizza.html" title="Pizza">Pizza</a></li>
+        </ul>
+    </nav>
+
+    <p>Enter Your Pizza Order and Click "Place Order".</p>
+
+    <form action="pizza.html" method="get">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name">
+        </div>
+        <div>
+            <label for="address">Address:</label>
+            <input type="text" id="address">
+        </div>
+        <div>
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone">
+        </div>
+        <div>
+            <label for="size">Size:</label>
+            <select name="size" id="size">
+                <option value="">Select A Size</option>
+                <option>Small</option>
+                <option>Medium</option>
+                <option>Large</option>
+            </select>
+        </div>
+        <div>
+            <label for="topping">Topping:</label>
+            <select name="topping" id="topping">
+                <option value="">Select A Topping</option>
+                <option>Pepperoni</option>
+                <option>Extra Cheese</option>
+                <option>Ham</option>
+                <option>Mushrooms</option>
+                <option>Sausage</option>
+            </select>
+        </div>
+        <div>
+            <label for="notes">Notes to the Cook:</label>
+            <input type="text" id="notes">
+        </div>
+        <div>
+            <label></label>
+            <input type="button" id="order" value="Place Order">
+        </div>
+    </form>
+
+    <script>
+        const $ = selector => document.querySelector(selector);
+
+        const processEntries = () => {
+            const name = $("#name");
+            const address = $("#address");
+            const phone = $("#phone");
+            const size = $("#size");
+            const topping = $("#topping");
+            const notes = $("#notes");
+
+            let finished = true;
+
+            if (name.value == "" || address.value == "" || phone.value == "" || size.value == "" || topping.value == "" || notes.value == "") {
+                alert("Please finish every field in the order form before placing your order.");
+                finished = false;
+            }
+
+            if (finished == true) {
+                $("form").submit();
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            $("#order").addEventListener("click", processEntries);
+            $("#name").focus();
+        });
+    </script>
+</body>
+
+</html>
