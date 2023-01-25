@@ -2,6 +2,8 @@
 
 <html lang="en">
 
+<!--The head section includes information about the web page-->
+
 <head>
     <title>Pizza Ordering</title>
     <meta charset="utf-8">
@@ -10,8 +12,12 @@
     <link rel="stylesheet" href="mystyle.css" type="text/css">
 </head>
 
+<!--The body includes information that is displayed on the web page-->
+
 <body>
     <h1>Pizza Ordering</h1>
+
+    <!--Navigation bar-->
 
     <nav>
         <ul>
@@ -24,19 +30,29 @@
 
     <h2>Enter Your Pizza Order and Click "Place Order"<h2>
 
+            <!--Creates pizza order form-->
+
             <form action="pizza.html" method="get">
+
+                <!--Name-->
                 <div>
                     <label for="name">Name:</label>
                     <input type="text" id="name">
                 </div>
+
+                <!--Street-->
                 <div>
                     <label for="street">Street Address:</label>
                     <input type="text" id="street">
                 </div>
+
+                <!--City-->
                 <div>
                     <label for="city">City:</label>
                     <input type="text" id="city">
                 </div>
+
+                <!--State-->
                 <div>
                     <label for="state">State:</label>
                     <select name="state" id="state">
@@ -95,10 +111,14 @@
                         <option>WY</option>
                     </select>
                 </div>
+
+                <!--Zip code-->
                 <div>
                     <label for="zip">Zip Code:</label>
                     <input type="text" id="zip">
                 </div>
+
+                <!--Phone #-->
                 <div>
                     <label for="phone">Phone:</label>
                     <input type="text" id="phone">
@@ -113,6 +133,8 @@
                         <option>Extra Large</option>
                     </select>
                 </div>
+
+                <!--Topping-->
                 <div>
                     <label for="topping">Topping:</label>
                     <select name="topping" id="topping">
@@ -130,25 +152,35 @@
                         <option>Pineapple</option>
                     </select>
                 </div>
+
+                <!--Notes for the cook-->
                 <div>
                     <label for="notes">Notes to the Cook:</label>
                     <input type="text" id="notes">
                 </div>
+
+                <!--Pickup or delivery-->
                 <div>
                     <label>Pickup or Delivery:</label>
                     <input type="radio" name="pickupOrDelivery" id="pickup" value="pickup">Pickup
                     <input type="radio" name="pickupOrDelivery" id="delivery" value="delivery">Delivery<br>
                 </div>
+
+                <!--Place order button-->
                 <div>
                     <label></label>
                     <input type="button" id="order" value="Place Order">
                 </div>
             </form>
 
+            <!--Javascript for processing entries-->
+
             <script>
                 const $ = selector => document.querySelector(selector);
 
                 const processEntries = () => {
+
+                    //Create constants of page elements
                     const name = $("#name");
                     const street = $("#street");
                     const city = $("#city");
@@ -170,6 +202,7 @@
                         pickupOrDelivery = $("#delivery").value;
                     }
 
+                    //Check for valid values
                     if (name.value == "" || street.value == "" || city.value == "" || state.value == ""
                         || zip.value == "" || phone.value == "" || size.value == "" || topping.value == ""
                         || notes.value == "" || pickupOrDelivery == null) {
@@ -182,6 +215,7 @@
                     }
                 }
 
+                //Process entries if order button is clicked
                 document.addEventListener("DOMContentLoaded", () => {
                     $("#order").addEventListener("click", processEntries);
                     $("#name").focus();
