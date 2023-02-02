@@ -23,6 +23,11 @@ h3 {
     color: brown;
 }
 
+img {
+    float: left;
+    padding-right: 2em;
+}
+
 body {
     background-color: burlywood;
     color: brown;
