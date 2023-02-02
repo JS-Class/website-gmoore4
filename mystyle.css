@@ -19,7 +19,6 @@ h2 {
     font: bold 1em/2em Arial, Helvetica, sans-serif
 }
 
-
 h3 {
     color: brown;
 }
@@ -40,6 +39,10 @@ body {
     color: brown;
 }
 
+#floatingElement {
+    float: left;
+}
+
 #favoriteTeam {
     color: midnightblue;
     font-weight: bold;
@@ -47,6 +50,10 @@ body {
 
 #footer {
     color: brown;
+}
+
+.lorem {
+    text-align: center;
 }
 
 nav {
