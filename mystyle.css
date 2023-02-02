@@ -23,7 +23,7 @@ h3 {
     color: brown;
 }
 
-img {
+.myPic {
     float: left;
     padding-right: 2em;
 }
@@ -42,10 +42,6 @@ body {
 
 #main {
     color: brown;
-}
-
-#floatingElement {
-    float: left;
 }
 
 #favoriteTeam {
