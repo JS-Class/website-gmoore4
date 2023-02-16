@@ -98,3 +98,7 @@ td {
     font-weight: bold;
     border: 1px solid black;
 }
+
+table {
+    border-collapse: collapse;
+}
