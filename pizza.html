@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<!--The head section includes information about the web page-->
+
+<head>
+    <title>Pizza Ordering</title>
+    <meta charset="utf-8">
+    <meta name="description" content="This is a page to order pizza from.">
+    <meta name="keywords" content="pizza, order, ordering pizza">
+    <link rel="stylesheet" href="mystyle.css" type="text/css">
+</head>
+
+<!--The body includes information that is displayed on the web page-->
+
+<body>
+    <h1>Pizza Ordering</h1>
+
+    <!--Navigation bar-->
+
+    <nav>
+        <ul>
+            <li><a href="index.html" title="About">About</a></li>
+            <li><a href="page2.html" title="Page 2">Page 2</a></li>
+            <li><a href="courses.html" title="Courses">Courses</a></li>
+            <li><a href="pizza.html" title="Pizza">Pizza</a></li>
+        </ul>
+    </nav>
+
+    <h2>Enter Your Pizza Order and Click "Place Order"<h2>
+
+            <!--Creates pizza order form-->
+
+            <form action="pizza.html" method="get">
+
+                <!--Name-->
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name">
+                </div>
+
+                <!--Street-->
+                <div>
+                    <label for="street">Street Address:</label>
+                    <input type="text" id="street">
+                </div>
+
+                <!--City-->
+                <div>
+                    <label for="city">City:</label>
+                    <input type="text" id="city">
+                </div>
+
+                <!--State-->
+                <div>
+                    <label for="state">State:</label>
+                    <select name="state" id="state">
+                        <option value="">Select Your State</option>
+                        <option>AL</option>
+                        <option>AK</option>
+                        <option>AZ</option>
+                        <option>AR</option>
+                        <option>AS</option>
+                        <option>CA</option>
+                        <option>CO</option>
+                        <option>CT</option>
+                        <option>DE</option>
+                        <option>DC</option>
+                        <option>FL</option>
+                        <option>GA</option>
+                        <option>HI</option>
+                        <option>ID</option>
+                        <option>IL</option>
+                        <option>IN</option>
+                        <option>IA</option>
+                        <option>KS</option>
+                        <option>KY</option>
+                        <option>LA</option>
+                        <option>ME</option>
+                        <option>MD</option>
+                        <option>MA</option>
+                        <option>MI</option>
+                        <option>MN</option>
+                        <option>MS</option>
+                        <option>MO</option>
+                        <option>MT</option>
+                        <option>NE</option>
+                        <option>NV</option>
+                        <option>NH</option>
+                        <option>NJ</option>
+                        <option>NM</option>
+                        <option>NY</option>
+                        <option>NC</option>
+                        <option>ND</option>
+                        <option>OH</option>
+                        <option>OK</option>
+                        <option>OR</option>
+                        <option>PA</option>
+                        <option>RI</option>
+                        <option>SC</option>
+                        <option>SD</option>
+                        <option>TN</option>
+                        <option>TX</option>
+                        <option>UT</option>
+                        <option>VT</option>
+                        <option>VA</option>
+                        <option>WA</option>
+                        <option>WV</option>
+                        <option>WI</option>
+                        <option>WY</option>
+                    </select>
+                </div>
+
+                <!--Zip code-->
+                <div>
+                    <label for="zip">Zip Code:</label>
+                    <input type="text" id="zip">
+                </div>
+
+                <!--Phone #-->
+                <div>
+                    <label for="phone">Phone:</label>
+                    <input type="text" id="phone">
+                </div>
+                <div>
+                    <label for="size">Size:</label>
+                    <select name="size" id="size">
+                        <option value="">Select A Size</option>
+                        <option>Small</option>
+                        <option>Medium</option>
+                        <option>Large</option>
+                        <option>Extra Large</option>
+                    </select>
+                </div>
+
+                <!--Topping-->
+                <div>
+                    <label for="topping">Topping:</label>
+                    <select name="topping" id="topping">
+                        <option value="">Select A Topping</option>
+                        <option>None</option>
+                        <option>Bacon</option>
+                        <option>Chicken</option>
+                        <option>Extra Cheese</option>
+                        <option>Ham</option>
+                        <option>Mushrooms</option>
+                        <option>Onions</option>
+                        <option>Pepperoni</option>
+                        <option>Peppers</option>
+                        <option>Pineapple</option>
+                        <option>Sausage</option>
+                    </select>
+                </div>
+
+                <!--Notes for the cook-->
+                <div>
+                    <label for="notes">Notes to the Cook:</label>
+                    <input type="text" id="notes">
+                </div>
+
+                <!--Pickup or delivery-->
+                <div>
+                    <label>Pickup or Delivery:</label>
+                    <input type="radio" name="pickupOrDelivery" id="pickup" value="pickup">Pickup
+                    <input type="radio" name="pickupOrDelivery" id="delivery" value="delivery">Delivery<br>
+                </div>
+
+                <!--Place order button-->
+                <div>
+                    <label></label>
+                    <input type="button" id="order" value="Place Order">
+                </div>
+            </form>
+
+            <!--Javascript for processing entries-->
+
+            <script>
+                const $ = selector => document.querySelector(selector);
+
+                const processEntries = () => {
+
+                    //Create constants of page elements
+                    const name = $("#name");
+                    const street = $("#street");
+                    const city = $("#city");
+                    const state = $("#state");
+                    const zip = $("#zip");
+                    const phone = $("#phone");
+                    const size = $("#size");
+                    const topping = $("#topping");
+                    const notes = $("#notes");
+
+                    let finished = true;
+                    let pickupOrDelivery = null;
+
+                    if ($("#pickup").checked) {
+                        pickupOrDelivery = $("#pickup").value;
+                    }
+
+                    if ($("#delivery").checked) {
+                        pickupOrDelivery = $("#delivery").value;
+                    }
+
+                    //Check for valid values
+                    if (name.value == "" || street.value == "" || city.value == "" || state.value == ""
+                        || zip.value == "" || phone.value == "" || size.value == "" || topping.value == ""
+                        || notes.value == "" || pickupOrDelivery == null) {
+                        alert("Please fill out every field in the order form before placing your order.");
+                        finished = false;
+                    }
+
+                    if (finished == true) {
+                        $("form").submit();
+                    }
+                }
+
+                //Process entries if order button is clicked
+                document.addEventListener("DOMContentLoaded", () => {
+                    $("#order").addEventListener("click", processEntries);
+                    $("#name").focus();
+                });
+            </script>
+
+            <footer>
+                <h6>Copyright &copy; 2023 Gabriel Moore</h6>
+                <p>
+                    <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                        <img style="border:0;width:88px;height:31px"
+                            src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!">
+                    </a>
+                </p>
+            </footer>
+</body>
+
+</html>
